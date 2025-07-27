@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Technical Documentation Page</title>
+</head>
+<body>
+
+    <div class="title">
+        <h1>Technical Documentation Page</h1>
+
+    </div>
+
+    <div class="body">
+        <nav id="navbar">
+            <!-- <div class="navs"> -->
+                <header class="navigation"></header>
+                <header class="mobile">Technical Documentation Page</header>
+                <input type="checkbox" name="menu" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            <!-- </div> -->
+            <div class="nav-links">
+                <a href="#introduction" class="nav-link"><span class="link introduction">Introduction</span></a>
+                <a href="#the_box_model" class="nav-link"><span class="link the_box_model">The Box Model</span></a>
+                <a href="#flexbox-basics" class="nav-link"><span class="link flexbox-basics">Flexbox Basics</span></a>
+                <a href="#flexbox-examples" class="nav-link"><span class="link flexbox-examples">Flexbox Examples</span></a>
+                <a href="#grid-basics" class="nav-link"><span class="link grid-basics">Grid Basics</span></a>
+                <a href="#grid-examples" class="nav-link"><span class="link grid-examples">Grid Examples</span></a>
+                <a href="#responsive-design" class="nav-link"><span class="link responsive-design">Responsive Design</span></a>
+                <a href="#flexbox_vs_grid" class="nav-link"><span class="link flexbox_vs_grid">Flexbox vs Grid</span></a>
+                <a href="#resources" class="nav-link"><span class="link resources">Resources</span></a>
+            </div>
+        </nav>
+
+
+    <main id="main-doc">
+
+        <section class="main-section" id="introduction">
+            <header>🧩 Introduction</header>
+            <p>Responsive design ensures that a webpage looks and functions well on all screen sizes — from phones to desktops. Modern CSS gives us two powerful layout systems to build responsive pages:</p>
+            <ul>
+                <li>Flexbox: Ideal for 1D layouts (row or column)</li>
+                <li>Grid: Ideal for 2D layouts (row and column)</li>
+            </ul>
+            <p>This guide will explain how they work and how to use them to create clean, flexible, and responsive web layouts.</p>
+        </section>
+
+        <section class="main-section" id="the_box_model">
+            <header>📦 The Box Model</header>
+            <p>Every HTML element is a rectangular box made of:</p>
+            <p></p>
+            <ol>
+                <li>Content — text or images inside</li>
+                <li>Padding — space between the content and the border</li>
+                <li>Border — line around the padding</li>
+                <li>Margin — space between the border and other elements</li>
+            </ol>
+            <p>Example:</p>
+            <div class="code-box">
+                <p class="code"><span class="code">box-sizing: content-box;</span> /* Default */</p>
+                <p class="code"><span class="code">box-sizing: border-box;</span> /* Preferred for layouts */</p>
+            </div>
+            <p>Using border-box makes width/height include padding and borders, which simplifies layout calculations.</p>
+        </section>
+
+        <section class="main-section" id="flexbox-basics">
+            <header>🔧 Flexbox Basics</header>
+            <p>Flexbox is designed for 1D layouts — either horizontal or vertical.</p>
+            <p>Activating Flexbox:</p>
+            <div class="code-box">
+                <p class="code"><span class="code">.container {</span></p>
+                <p class="code indent"><span class="code indent">display: flex;</span></p>
+                <p class="code"><span class="code">}</span></p>
+            </div>
+            <p>Key Properties (on the flex container):</p>
+            <ul class="line-gap">
+                <div class="code-line"><li class="code">flex-direction: row (default), column, etc.</li></div>
+                <br>
+                <div class="code-line"><li class="code">justify-content: /* controls alignment along main axis */ (e.g., center, space-between)</li></div>
+                <br>
+                <div class="code-line"><li class="code">align-items: /* controls alignment along cross axis */ (e.g., center, stretch)</li></div>
+                <br>
+                <div class="code-line"><li class="code">gap: /* space between items */</li></div>
+            </ul>
+            <p>Key Properties (on flex items):</p>
+            <ul class="line-gap">
+                <div class="code-line"><li class="code">flex-grow: lets items grow</li></div>
+                <br>
+                <div class="code-line"><li class="code">flex-shrink: lets items shrink</li></div>
+                <br>
+                <div class="code-line"><li class="code">flex-basis: sets initial size before growing/shrinking</li></div>
+                <br>
+                <div class="code-line"><li class="code">flex: shorthand for all 3 above</li></div>
+            </ul>
+            <div class="code-box">
+                <p class="code"><span class="code">.item {</span></p>
+                <p class="code indent"><span class="code indent">flex: 1;</span></p>
+                <p class="code"><span class="code">}</span></p>
+            </div>
+        </section>
+
+        <section class="main-section" id="flexbox-examples">
+            <header>🧪 Flexbox Examples</header>
+            <p></p>
+            <p></p>
+            <ol>
+                <br>
+                <li>Navbar
+                    <p>HTML:</p>
+                    <div class="code-box">
+                        <p class="code"><span class="code">&lt;nav class="flex"&gt;</span></p>
+                        
+                        <p class="code indent"><span class="code indent">&lt;a&gt;Home&lt;/a&gt;</span></p>
+                        <p class="code indent"><span class="code indent">&lt;a&gt;About&lt;/a&gt;</span></p>
+                        <p class="code indent"><span class="code indent">&lt;a&gt;Contact&lt;/a&gt;</span></p>
+                        <p class="code"><span class="code">&lt;/nav&gt;</span></p>
+                    </div>
+                    <p>CSS:</p>
+                    <div class="code-box">
+                        <p class="code"><span class="code">nav {</span></p>
+                        <p class="code indent"><span class="code indent">display: flex;</span></p>
+                        <p class="code indent"><span class="code indent">justify-content: space-between;</span></p>
+                        <p class="code"><span class="code">}</span></p>
+                    </div>
+                </li>
+                <br><br>
+                <li>Centered Card
+                    <div class="code-box">
+                        <p class="code"><span class="code">.container {</span></p>
+                        <p class="code indent"><span class="code indent">display: flex;</span></p>
+                        <p class="code indent"><span class="code indent">justify-content: center;</span></p>
+                        <p class="code indent"><span class="code indent">align-items: center;</span></p>
+                        <p class="code indent"><span class="code indent">height: 100vh;</span></p>
+                        <p class="code"><span class="code">}</span></p>
+                    </div>
+                </li>
+                <br><br>
+                <li>Equal Columns
+                    <div class="code-box">
+                        <p class="code"><span class="code">.col {</span></p>
+                        <p class="code indent"><span class="code indent">flex: 1;</span></p>
+                        <p class="code"><span class="code">}</span></p>
+                    </div>
+                </li>
+            </0l>
+        </section>
+
+        <section class="main-section" id="grid-basics">
+            <header>📐 Grid Basics</header>
+            <p>Grid is made for 2D layouts — rows and columns.</p>
+            <br>
+            <p>Activating Grid:</p>
+            <div class="code-box">
+                <p class="code"><span class="code">.container {</span></p>
+                <p class="code indent"><span class="code indent">display: grid;</span></p>
+                <p class="code"><span class="code">}</span></p>
+            </div>
+            <br>
+            <p>Core Properties</p>
+            <ul>
+                <div class="code-line">
+                    <li class="code">grid-template-columns: defines column layout (e.g., repeat(3, 1fr))</li>
+                </div>
+                <br>
+                <div class="code-line">
+                    <li class="code">grid-template-rows: row sizes</li>
+                </div>
+                <br>
+                <div class="code-line">
+                    <li class="code">gap: space between rows/columns</li>
+                </div>
+                <br>
+                <div class="code-line">
+                    <li class="code">place-items: shorthand for align-items + justify-items</li>
+                </div>
+            </ul>
+            <div class="code-box">
+                <p class="code"><span class="code">.container {</span></p>
+                <p class="code indent"><span class="code indent">display: grid;</span></p>
+                <p class="code indent"><span class="code indent">grid-template-columns: repeat(3, 1fr);</span></p>
+                <p class="code indent"><span class="code indent">gap: 1rem;</span></p>
+                <p class="code"><span class="code">}</span></p>
+            </div>
+            <br><br>
+            <p>Grid Item Properties:</p>
+            <ul>
+                <div class="code-line">
+                    <li class="code">grid-column: 1 / 3; → spans from column 1 to 3</li>
+                </div>
+                <br>
+                <div class="code-line">
+                    <li class="code">grid-row: 2; → places item in row 2</li>
+                </div>
+            </ul>
+        </section>
+
+        <section class="main-section" id="grid-examples">
+            <header>🎯 Grid Examples</header>
+            <p></p>
+            <p></p>
+            <ol>
+                <li class="gap">Simple 3x2 Grid
+                    <div class="code-box">
+                        <p class="code"><span class="code">.container {</span></p>
+                        <p class="code indent"><span class="code indent">display: grid;</span></p>
+                        <p class="code indent"><span class="code indent">grid-template-columns: repeat(3, 1fr)</span></p>
+                        <p class="code indent"><span class="code indent">grid-template-rows: auto auto;</span></p>
+                        <p class="code"><span class="code">}</span></p>
+                    </div>
+                </li>
+
+                <li class="gap">Image Gallery
+                    <div class="code-box">
+                        <p class="code"><span class="code">.gallery {</span></p>
+                        <p class="code indent"><span class="code indent">display: grid;</span></p>
+                        <p class="code indent"><span class="code indent">grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));</span></p>
+                        <p class="code indent"><span class="code indent">gap: 1rem;</span></p>
+                        <p class="code"><span class="code">}</span></p>
+                    </div>
+                </li>
+
+                <li class="gap">Layout with Header, Sidebar, Main
+                    <div class="code-box">
+                        <p class="code"><span class="code">.layout {</span></p>
+                        <p class="code indent"><span class="code indent">display: grid;</span></p>
+                        <p class="code indent"><span class="code indent">grid-template-areas:</span></p>
+                        <p class="code indentx2"><span class="code indentx2">"header header"</span></p>
+                        <p class="code indentx2"><span class="code indentx2">"sidebar main";</span></p>
+                        <p class="code indent"><span class="code indent">grid-template-columns: 200px 1fr;</span></p>
+                        <p class="code"><span class="code">}</span></p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="main-section" id="responsive-design">
+            <header>📱 Responsive Design</header>
+            <p>Responsive design adapts layout for different screen sizes.</p>
+            <p class="gap">Use Media Queries:</p>
+            <div class="code-box">
+                <p class="code"><span class="code">@media (max-width: 768px) {</span></p>
+                <p class="code indent"><span class="code indent">.container {</span></p>
+                <p class="code indentx2"><span class="code indentx2">flex-direction: column;</span></p>
+                <p class="code indent"><span class="code indent">}</span></p>
+                <p class="code"><span class="code">}</span></p>
+            </div>
+            <div class="tips gap">
+                <p>Tips:</p>
+            <ul>
+                <li>Use relative units (% , em, fr) instead of fixed px</li>
+                <br>
+                <li>Use minmax() with auto-fit or auto-fill for flexible grids</li>
+                <br>
+                <li>Stack elements on small screens using flex-direction or grid-template-areas</li>
+            </ul>
+            </div>
+        </section>
+        <section class="main-section" id="flexbox_vs_grid">
+            <header>⚔️ Flexbox vs Grid</header>
+            <!-- <div class="code-box"> -->
+                <div class="gap">
+                    <table class="indentx2">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Flexbox</th>
+                            <th>Grid</th>
+                        </tr>
+                    </thead>
+                    <!-- <div class="horizontal-rule"></div> -->
+                    <tbody>
+                        <tr>
+                            <td>Axis</td>
+                            <td>One (row/column)</td>
+                            <td>Two (row & col)</td>
+                        </tr>
+
+                        <tr>
+                            <td>Best For</td>
+                            <td>Navbars, Cards</td>
+                            <td>Page Layouts</td>
+                        </tr>
+
+                        <tr>
+                            <td>Item control</td>
+                            <td>Based on content</td>
+                            <td>Layout areas</td>
+                        </tr>
+
+                        <tr>
+                            <td>Gap support</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+
+                        <tr>
+                            <td>Nestable</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Use Flexbox for distributing items.</p>
+            <p>Use Grid when the layout structure is known ahead of time.</p>
+        </section>
+
+        <section class="main-section" id="resources">
+            <header>📖 Resources</header>
+            <p></p>
+            <p></p>
+            <ul>
+                <li>CSS Tricks Flexbox Guide: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li>
+                <li>CSS Tricks Grid Guide: <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">https://css-tricks.com/snippets/css/complete-guide-grid/</a></li>
+                <li>Flexbox Froggy: <a href="https://flexboxfroggy.com">https://flexboxfroggy.com</a></li>
+                <li>Grid Garden: <a href="https://cssgridgarden.com">https://cssgridgarden.com</a></li>
+                <li>MDN Flexbox Docs: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/
+                Basic_concepts_of_flexbox</a></li>
+                <li>MDN Grid Docs: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Temi @ 2025</p>
+    </footer>
+    </div>
+    
+    <script>
+  const navLinks = document.querySelectorAll('.nav-link');
+  const checkbox = document.getElementById('nav-toggle');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      checkbox.checked = false;
+    });
+  });
+</script>
+
+</body>
+</html>
